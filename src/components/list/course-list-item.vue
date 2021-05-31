@@ -80,7 +80,7 @@ export default {
         //标题
         &-title{
             flex: 1;
-            font-size: 14px;
+            font-size: 12px;
             color: #333333;
             overflow: hidden;
             text-overflow: ellipsis;

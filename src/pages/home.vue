@@ -8,7 +8,7 @@
             :title="tab"
             :activated="index === activatedIndex"
             >
-                <div :title="tab">page-{{ tab }}</div>
+                <home-content />
             </tab-item>
         </Tab>
     </div>
@@ -17,12 +17,14 @@
 import {ref} from "vue";
 import Header from "../components/header.vue";
 import {Tab,TabItem} from "../components/tab";
+import HomeContent from "../components/home-content.vue";
 export default {
     name: "Home",
     components: {
         Header,
         Tab,
         TabItem,
+        HomeContent,
     },
     setup(){
         const tabs = ref(["首页","vue","webpack","react","vue","webpack","react","vue","webpack","react"]);

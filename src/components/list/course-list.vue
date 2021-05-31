@@ -2,7 +2,7 @@
     <div v-if="courses && courses.length > 0" class="course-list">
         <!--课程列表-->
         <CourseListItem
-            v-for="(course,index)in courses"
+            v-for="(course,index) in courses"
             :key="`course-item-${index}`"
             v-bind="course"
         >
