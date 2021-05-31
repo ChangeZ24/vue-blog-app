@@ -1,0 +1,20 @@
+//渐变进入的过渡动画
+.fade-enter-active,
+.fade-leave-active{
+    transition: opacity 0.5s ease;
+}
+//渐变进入前，离开后过渡动画
+.fade-enter-from,
+.fade-leave-to{
+    opacity: 0;
+}
+//左边进入过渡动画
+.left-in-enter-active,
+.left-in-leave-active{
+    transition: all 0.5s ease;
+}
+//左边进入前，离开后过渡动画
+.left-in-enter-from,
+.left-in-leave-to{
+    transform: translateX(-100%);
+}
