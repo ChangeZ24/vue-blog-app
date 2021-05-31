@@ -4,7 +4,9 @@
         <CourseListItem
             v-for="(course,index) in courses"
             :key="`course-item-${index}`"
-            v-bind="course"
+            :title="course.name"
+            :image="course.picture_url"
+            :label="course.label"
         >
         </CourseListItem>
     </div>

@@ -13,12 +13,12 @@
             >
                 {{ title }}
             </span>
-            <span v-if="tag && tag.length > 0"
+            <!-- <span v-if="tag && tag.length > 0"
                 class="course-list-item-info-tag"
                 :style="{ backgroundColor: tagColor }"
             >
                 {{ tag }}
-            </span>
+            </span> -->
         </div>
     </div>
 </template>
@@ -28,8 +28,8 @@ export default {
     props:{
         image: String,//博客图
         title: String,//标题
-        tag: String,//附加说明
-        tagColor: String,
+        //tag: String,//附加说明
+        //tagColor: String,
         label: String//标签
     }
 };
@@ -80,25 +80,25 @@ export default {
         //标题
         &-title{
             flex: 1;
-            font-size: 12px;
+            font-size: 10px;
             color: #333333;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
         }
         //tag附加信息
-        &-tag{
-            height: 20px;
-            padding: 0 5px;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            font-size: 12px;
-            color: white;
-        }
+        // &-tag{
+        //     height: 20px;
+        //     padding: 0 5px;
+        //     display: inline-flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     border-radius: 10px;
+        //     font-size: 12px;
+        //     color: white;
+        // }
     }
 }
 </style>

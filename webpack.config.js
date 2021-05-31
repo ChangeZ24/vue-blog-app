@@ -154,6 +154,23 @@ config
         .hot(true) // 打开页面热载功能
         .sockPort('location') // 设置成平台自己的端口
         .open(true)
+        .before((app, devServer, compiler) => {
+            // 添加自定义中间件
+            app.use((req, res, next) => {
+              // 遇到 /api 的接口的时候，把请求的 headers 值清空
+              if (req.url.startsWith("/api")) {
+                // 这一步很重要，不然代理会失败
+                req.headers = {};
+              }
+              next();
+            });
+          })
+          .proxy({
+            // 将所有 /api 的接口都做一层代理，
+            "/api": {
+              target: "https://www.lanqiao.cn",
+            },
+          });
 //----- optimization start-----
 config.when(
     !isDev,
