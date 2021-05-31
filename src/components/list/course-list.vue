@@ -1,15 +1,19 @@
 <template>
-    <div v-if="courses && courses.length > 0" class="course-list">
+    <transition-group name="scale" tag="div" 
+        v-if="courses && courses.length > 0" 
+        class="course-list"
+    >
         <!--课程列表-->
-        <CourseListItem
+        <course-list-item
             v-for="(course,index) in courses"
             :key="`course-item-${index}`"
             :title="course.name"
             :image="course.picture_url"
             :label="course.label"
+            @click="onItemClick(course)"
         >
-        </CourseListItem>
-    </div>
+        </course-list-item>
+    </transition-group>
 </template>
 <script>
 import CourseListItem from "./course-list-item"
@@ -24,6 +28,15 @@ export default {
             //课程列表
             type: Array,
             default: () => [],
+        }
+    },
+    setup(){
+        //点击课程跳转到对应的课程详情页
+        const onItemClick = (course) => {
+            window.location.href = `https://www.lanqiao.cn${course.hrml_url}`;
+        };
+        return {
+            onItemClick
         }
     }
 }

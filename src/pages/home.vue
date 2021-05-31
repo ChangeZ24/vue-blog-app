@@ -8,7 +8,10 @@
             :title="tab.title"
             :activated="index === activatedIndex"
             >
-                <home-content :tab="tab" v-if="shouldShowPage(index)"/>
+                <home-content :tab="tab" 
+                v-if="shouldShowPage(index)" 
+                :activated="index === activatedIndex"
+                />
             </tab-item>
         </Tab>
     </div>
